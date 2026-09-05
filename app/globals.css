@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #0b5ea1;
+  --color-brand-dark: #073c68;
+  --color-brand-light: #7fc1e4;
+  --color-accent: #2ea3f2;
+  --color-surface: #f5f5f5;
+  --color-ink: #112337;
+  --color-body: #666666;
+
+  --font-sans: "Open Sans", Arial, sans-serif;
+  --font-heading: "Inter", "Exo", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff;
+  color: var(--color-body);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  line-height: 1.7em;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.15em;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-brand-dark);
+}
+
+.wave-divider {
+  position: relative;
+}
+
+.wave-divider::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: #fff;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 40%);
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(11, 94, 161, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(11, 94, 161, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(11, 94, 161, 0);
+  }
+}
+
+.call-now-pulse {
+  animation: pulse-ring 2.5s cubic-bezier(0.66, 0, 0, 1) infinite;
+}
